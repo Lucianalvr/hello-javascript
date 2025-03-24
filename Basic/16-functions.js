@@ -3,7 +3,7 @@ Clase 31 - Funciones
 Vídeo: https://youtu.be/1glVfFxj8a4?t=12829
 */
 
-// Funciones
+// Funciones -- bloqe de codigo para realizar una tarea especifica
 
 // Simple
 
@@ -24,7 +24,7 @@ function myFuncWithParams(name) {
 myFuncWithParams("Brais")
 myFuncWithParams("MoureDev")
 
-// Funciones anónimas
+// Funciones anónimas -- las tenemos que acabar asignando a una variable
 
 const myFunc2 = function (name) {
     console.log(`¡Hola, ${name}!`)
@@ -32,8 +32,8 @@ const myFunc2 = function (name) {
 
 myFunc2("Brais Moure")
 
-// Arrow functions
-
+// Arrow functions --debemos asignarlar a una variable como las anonimas
+// eliminamos palabra function y llaves, pasamos el parametro => y lo que debe de hacer
 const myFunc3 = (name) => {
     console.log(`¡Hola, ${name}!`)
 }
@@ -53,24 +53,24 @@ sum(5, 10)
 sum(5)
 sum()
 
-function defaultSum(a = 0, b = 0) {
+// Valores Por defecto
+
+function defaultSum(a = 4, b = 0) { 
     console.log(a + b)
 }
-
-// Por defecto
 
 defaultSum()
 defaultSum(5)
 defaultSum(5, 10)
-defaultSum(b = 5)
+defaultSum(undefined, 5) //con undefined toma el valor por defecto
 
 // Retorno de valores
 
 function mult(a, b) {
-    return a * b
+    return a * b // lo que pase a continuacion del return se devuelve a la persona que llame a mult
 }
 
-let result = mult(5, 10)
+let result = mult(5, 10) // me guardo el return en una variable
 console.log(result)
 
 // Funciones anidadas
@@ -80,13 +80,13 @@ function extern() {
     function intern() {
         console.log("Función interna")
     }
-    intern()
+    intern() //debo invocarla dentro de extern
 }
 
 extern()
-// intern() Error: fuera del scope
+// intern() Error: fuera del scope (rango de actuacion)
 
-// Funciones de orden superior
+// Funciones de orden superior -- fciones que reciben otras funciones como argumentos
 
 function applyFunc(func, param) {
     func(param)
@@ -94,13 +94,14 @@ function applyFunc(func, param) {
 
 applyFunc(myFunc4, "función de orden superior")
 
-// forEach
+// forEach -- Una funcion que sirve para ejecutar bucles asociados a elementos iterables
+//Itera cada valor, como un for of, combinando funciones
+//No se puede detener con break ni continue como el for...of
+let myArray = [1, 2, 3, 4]
 
-myArray = [1, 2, 3, 4]
+let mySet = new Set(["Brais", "Moure", "mouredev", 37, true, "braismoure@mouredev.com"])
 
-mySet = new Set(["Brais", "Moure", "mouredev", 37, true, "braismoure@mouredev.com"])
-
-myMap = new Map([
+let myMap = new Map([
     ["name", "Brais"],
     ["email", "braismoure@mouredev.com"],
     ["age", 37]

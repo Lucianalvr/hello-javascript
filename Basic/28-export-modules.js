@@ -5,9 +5,11 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=21480
 
 // Exportación de módulos
 
+//ir al package json y "type": "module" poner modular mi aplicacion
+
 // Funciones
 
-export function add(a, b) {
+export function add(a, b) {  // le agregamos la palabra export
     return a + b
 }
 

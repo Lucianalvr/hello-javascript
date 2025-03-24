@@ -31,7 +31,7 @@ if (age == 37) {
     console.log("La edad no es 37 ni es menor de edad")
 }
 
-// Operador ternario
+// Operador ternario -- para operaciones simples, pudiendo asigna el resultado a una variable
 
 const message = age == 37 ? "La edad es 37" : "La edad no es 37"
 console.log(message)

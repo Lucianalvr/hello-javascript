@@ -3,7 +3,8 @@ Clase 33 - Objetos
 Vídeo: https://youtu.be/1glVfFxj8a4?t=14229
 */
 
-// Objetos
+// Objetos -- Todo lo que NO es un dato primitivo es un objeto
+//una coleccion de propiedades clave / valor
 
 // Sintaxis
 
@@ -31,13 +32,13 @@ person.age = "37"
 console.log(person.age)
 console.log(typeof person.age)
 
-// Eliminación de propiedades
+// Eliminación de propiedades -- delete
 
 delete person.age
 
 console.log(person)
 
-// Nueva propiedad
+// Añadir Nueva propiedad
 
 person.email = "braismoure@mouredev.com"
 person["age"] = 37
@@ -50,7 +51,7 @@ let person2 = {
     name: "Brais",
     age: 37,
     alias: "MoureDev",
-    walk: function () {
+    walk: function () { //primero asigno el nombre de la funcion
         console.log("La persona camina.")
     }
 }
@@ -68,7 +69,7 @@ let person3 = {
     job: {
         name: "Programador",
         exp: 15,
-        work: function () {
+        work: function () { //this para acceder a la propiedades dentro de ese objeto
             console.log(`La persona de ${this.age} años de experiencia trabaja.`)
         }
     }
@@ -92,13 +93,14 @@ let person4 = {
 
 console.log(person)
 console.log(person4)
-
+//Los valores en los objetos se guardan por referencia, no por valor
+//no se compara el valor que hay dentro, sino la direccion de memoria, y son 2 distintas
 console.log(person == person4)
 console.log(person === person4)
 
-console.log(person.name == person4.name)
+console.log(person.name == person4.name) //aqui si porque ya asocia el 'valor' de name
 
-// Iteración
+// Iteración -- for In -- cuando iteramos accedemos a las claves
 
 for (let key in person4) {
     console.log(key + ": " + person4[key])
@@ -106,7 +108,8 @@ for (let key in person4) {
 
 // Funciones como objetos
 
-function Person(name, age) { // Debería ser una clase
+//usamos esta funcion como constructor, a este propiedad nombre = name
+function Person(name, age) { // Debería ser una clase -- no es buena practica asi
     this.name = name
     this.age = age
 }

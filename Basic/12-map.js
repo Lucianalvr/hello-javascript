@@ -3,7 +3,8 @@ Clase 27 - Maps
 Vídeo: https://youtu.be/1glVfFxj8a4?t=10755
 */
 
-// Map
+// Map -- almacena conjunto de datos -- cada elemento esta formado por un par clave/valor
+// nos vale para asociar una clave a un valor
 
 // Declaración
 
@@ -14,7 +15,7 @@ console.log(myMap)
 // Inicialiación
 
 myMap = new Map([
-    ["name", "Brais"],
+    ["name", "Brais"], // clave name, asocio el valor con una coma --> brais
     ["email", "braismoure@mouredev.com"],
     ["age", 37]
 ])
@@ -23,24 +24,24 @@ console.log(myMap)
 
 // Métodos y propiedades
 
-// set
+// set -- actualiza un elemento o lo agrega
 
 myMap.set("alias", "mouredev")
 myMap.set("name", "Brais Moure")
 
 console.log(myMap)
 
-// get
+// get -- para recuperar el valor
 
 console.log(myMap.get("name"))
-console.log(myMap.get("surname"))
+console.log(myMap.get("surname")) //no esta definida la clave
 
-// has
+// has -- permite comprobar si una clave existe o no
 
 console.log(myMap.has("surname"))
 console.log(myMap.has("age"))
 
-// delete
+// delete -- elimina la clave
 
 myMap.delete("email")
 
@@ -48,15 +49,15 @@ console.log(myMap)
 
 // keys, values y entries
 
-console.log(myMap.keys())
-console.log(myMap.values())
-console.log(myMap.entries())
+console.log(myMap.keys()) //retorna un listado con las claves
+console.log(myMap.values()) //retorna un listado con los valores
+console.log(myMap.entries()) // retorna todas las claves y valores
 
-// size
+// size -- tamaño del mapa, numero de los elementos
 
-console.log(myMap.size)
+console.log(myMap.size) 
 
-// clear
+// clear  -- borrar todos los elementos del mapa
 
 myMap.clear()
 

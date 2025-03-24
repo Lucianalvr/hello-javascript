@@ -1,15 +1,18 @@
 /*
-Clase 37 - Clases
+Clase 37 - Clases -- tipo de dato complejo
 Vídeo: https://youtu.be/1glVfFxj8a4?t=16864
 */
 
-// Clases
+// Clases -- sirven para crear plantillas de objeto, definimos prop y metodos
+// pero no le damos valores
+//le damos los valores cuando creamos las instancias
+//permiten reutilizar una estructura, una plantilla
 
-class Person {
+class Person { // le damos un nombre abrimos llaves
 
-    constructor(name, age, alias) {
-        this.name = name
-        this.age = age
+    constructor(name, age, alias) { //constructor metodo especial que permite definir la estructura de datos inicial 
+        this.name = name  //this.name es la clave de la propiedad,
+        this.age = age  // age es el valor que pasamos por parametro
         this.alias = alias
     }
 
@@ -69,17 +72,17 @@ class PersonWithMethod {
 let person4 = new PersonWithMethod("Brais", 37, "MoureDev")
 person4.walk()
 
-// Propiedades privadas
+// Propiedades privadas  --solo dentro de la clase podemos acceder a esta propiedad
 
-class PrivatePerson {
+class PrivatePerson { //quiero poder crear una persona pero no quiero que nadie pueda ver los datos
 
-    #bank
+    #bank //si quiero que una propiedad sea privada debo definirla antes en la clase
 
     constructor(name, age, alias, bank) {
         this.name = name
         this.age = age
         this.alias = alias
-        this.#bank = bank
+        this.#bank = bank //añado la almohadilla para hacer la propiedad privada
     }
 
     pay() {
@@ -90,17 +93,17 @@ class PrivatePerson {
 
 let person5 = new PrivatePerson("Brais", 37, "MoureDev", "IBAN123456789")
 
-// No podemos acceder
-// console.log(person5.bank) 
+// console.log(person5.bank) -- No podemos acceder -- es privado
 // person5.bank = "new IBAN123456789" // bank no es #bank
 
 console.log(person5)
 
-// Getters y Setters
+
+// Getters (obtener) y Setters (establecer)
 
 class GetSetPerson {
 
-    #name
+    #name //todas sus propiedades son privadas
     #age
     #alias
     #bank
@@ -111,18 +114,18 @@ class GetSetPerson {
         this.#alias = alias
         this.#bank = bank
     }
-
+// si solo quiero dejar acceder al nombre
     get name() {
         return this.#name
     }
-
+    // me permite modificarlo pero no leerlo
     set bank(bank) {
         this.#bank = bank
     }
 
 }
 
-person6 = new GetSetPerson("Brais", 37, "MoureDev", "IBAN123456789")
+let person6 = new GetSetPerson("Brais", 37, "MoureDev", "IBAN123456789")
 
 console.log(person6)
 console.log(person6.name)
@@ -149,7 +152,7 @@ class Animal {
 }
 
 class Dog extends Animal {
-
+//si no tiene constructor usa el del padre
     sound() {
         console.log("Guau!")
     }
@@ -161,9 +164,9 @@ class Dog extends Animal {
 }
 
 class Fish extends Animal {
-
+//si tiene nueva propiedad hacemos su constructor y llamamos con super a la clase padre
     constructor(name, size) {
-        super(name)
+        super(name) //Siempre se debe llamar a super() antes de usar this en el constructor de una clase hija.
         this.size = size
     }
 
@@ -181,7 +184,7 @@ let myFish = new Fish("MoureFish", 10)
 myFish.swim()
 myFish.sound()
 
-// Métodos estáticos
+// Métodos estáticos -- al ser estatico no necesitamos instanciar la clase para acceder a el 
 
 class MathOperations {
 

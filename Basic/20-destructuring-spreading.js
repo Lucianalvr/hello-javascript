@@ -17,7 +17,7 @@ console.log(myValue)
 let myName = person.name
 console.log(myName)
 
-// Desestructuración
+// Desestructuración -- permite extraer valores de arrays u objetos y asignarlos a variables
 
 // Sintaxis arrays
 
@@ -37,14 +37,14 @@ console.log(myValue7)
 console.log(myValue8)
 console.log(myValue9)
 
-// Ignorar elementos array
+// Ignorar elementos array -- usando las comas
 
 let [myValue10, , , myValue13] = myArray
 console.log(myValue10)
 console.log(myValue13)
 
 // Sintaxis objects
-
+// En los objetos no se desestructura en orden como en arrays, el nombre coincide con la propiedad
 let { name, age, alias } = person
 console.log(name)
 console.log(age)
@@ -60,12 +60,12 @@ console.log(email)
 
 // Sintaxis objects con nuevos nombres de variables
 
-let { alias: alias3, name: name3, age: age3 } = person
+let { alias: alias3, name: name3, age: age3 } = person //asi podemos cambiar el nombre de la variable
 console.log(name3)
 console.log(age3)
 console.log(alias3)
 
-// Objects anidados
+// Desestructurar Objects anidados
 
 let person3 = {
     name: "Brais",
@@ -88,7 +88,7 @@ let { name: name4, job: { name: jobName } } = person3
 console.log(name4)
 console.log(jobName)
 
-// Propagación (...)
+// Propagación (...)  Spreading -- permite expandir elementos de un array o un objeto a otros
 
 // Sintaxis arrays
 

@@ -5,26 +5,26 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=20444
 
 // Console
 
-// log
+// log -- mostrar la info mas general por consola
 
 console.log("¡Hola, JavaScript!")
 
 // error
 
-console.error("Este es un mensaje de error.")
+console.error("Este es un mensaje de error.") //sale en rojo
 console.error("Error al conectarse a la base de datos: ", new Error("Conexión fallida."))
 
-// warn
+// warn -- mensajes de advertencia en amarillo
 
 console.warn("Este es un mensaje de advertencia.")
 
-// info
+// info -- mensaje informativo adicional
 
 console.info("Este es un mensaje de información adicional.")
 
-// table
+// table -- para generar una estructura de tabla 
 
-let data = [
+let data = [    //entre corchetes
     ["Brais", 37],
     ["Sara", 21]
 ]
@@ -43,9 +43,9 @@ console.table(data)
 console.group("Usuario:")
 console.log("Nombre: Brais")
 console.log("Edad: 37")
-console.groupEnd()
+console.groupEnd() //debo finalizar el grupo
 
-// time
+// time -- medir el tiempo que se tarda en ejecutar un bloque de código
 
 console.time("Tiempo de ejecución 2")
 
@@ -59,7 +59,7 @@ for (let i = 0; i < 10000; i++) {
 
 }
 
-console.timeEnd("Tiempo de ejecución 2")
+console.timeEnd("Tiempo de ejecución 2") //abrir y cerrar los bloques
 
 for (let i = 0; i < 10000; i++) {
 
@@ -67,20 +67,20 @@ for (let i = 0; i < 10000; i++) {
 
 console.timeEnd("Tiempo de ejecución 1")
 
-// assert
+// assert -- Muestra un msj de error si lo que evalua es falso
 
 let age = 17
-console.assert(age >= 18, "El usuario debe ser mayor de edad.")
+console.assert(age >= 18, "El usuario debe ser mayor de edad.") //condicion + msj
 
-// count
+// count -- cuenta la cantidad de veces que se ha llamado con una etiqueta especifica
 
 console.count("Click")
 console.count("Click")
 console.count("Click")
-console.countReset("Click")
+console.countReset("Click") // resetea el contador
 console.count("Click")
 
-// trace
+// trace -- Muestra el seguimiento de la pila de ejecución del código
 
 function funcA() {
     funcB()
@@ -94,4 +94,4 @@ funcA()
 
 // clear
 
-// console.clear()
+// console.clear() // todo lo que mostre por consola se limpia
